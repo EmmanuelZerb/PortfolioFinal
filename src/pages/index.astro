@@ -4,11 +4,12 @@ import SmoothScroll from '../components/SmoothScroll';
 import Hero from '../components/Hero';
 import Skills from '../components/Skills';
 import Work from '../components/Work';
+import Journey from '../components/Journey';
 import Contact from '../components/Contact';
 import Scene3D from '../components/Scene3D';
 ---
 
-<Layout title="Emmanuel Zerbib | Développeur Full Stack & IA">
+<Layout title="Emmanuel Zerbib | Étudiant Ingénieur · Développeur IA">
   <SmoothScroll client:load>
     <Scene3D client:load />
 
@@ -22,6 +23,9 @@ import Scene3D from '../components/Scene3D';
         <div class="hidden md:flex items-center gap-8">
           <a href="#work" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
             Projets
+          </a>
+          <a href="#journey" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
+            Parcours
           </a>
           <a href="#skills" class="text-sm text-zinc-500 hover:text-zinc-300 transition-colors">
             Compétences
@@ -48,6 +52,7 @@ import Scene3D from '../components/Scene3D';
     <main>
       <Hero client:load />
       <Work client:load />
+      <Journey client:load />
       <Skills client:load />
       <Contact client:load />
     </main>
