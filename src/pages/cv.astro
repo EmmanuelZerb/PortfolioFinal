@@ -531,21 +531,23 @@ import CVDownload from '../components/CVDownload';
       overflow: hidden !important;
     }
 
-    /* Compacter le header ULTRA OPTIMIZED */
+    /* Header COMPACT QUALITY */
     header {
-      padding: 0.4rem !important;
+      padding: 0.35rem 0.45rem !important;
       background: linear-gradient(to bottom right, #18181b, #27272a, #18181b) !important;
     }
 
     header h1 {
-      font-size: 1.3rem !important;
+      font-size: 1.35rem !important;
       margin-bottom: 0.15rem !important;
-      letter-spacing: -0.02em !important;
+      letter-spacing: -0.01em !important;
+      font-weight: 700 !important;
     }
 
     header p {
-      font-size: 0.7rem !important;
-      margin-bottom: 0.35rem !important;
+      font-size: 0.72rem !important;
+      margin-bottom: 0.3rem !important;
+      font-weight: 400 !important;
     }
 
     header .grid {
@@ -554,8 +556,8 @@ import CVDownload from '../components/CVDownload';
     }
 
     header svg {
-      width: 0.7rem !important;
-      height: 0.7rem !important;
+      width: 0.68rem !important;
+      height: 0.68rem !important;
     }
 
     /* QR Code */
@@ -566,27 +568,34 @@ import CVDownload from '../components/CVDownload';
 
     .qr-code-container + p {
       font-size: 0.55rem !important;
+      font-weight: 500 !important;
     }
 
-    /* Compacter le contenu principal OPTIMIZED */
+    /* Contenu principal COMPACT QUALITY */
     .p-12 {
-      padding: 0.4rem !important;
+      padding: 0.35rem 0.45rem !important;
     }
 
     .space-y-6 {
-      gap: 0.25rem !important;
+      gap: 0.22rem !important;
     }
 
-    /* Titres de sections OPTIMIZED */
+    /* Titres de sections COMPACT QUALITY */
     h2 {
-      font-size: 0.75rem !important;
+      font-size: 0.78rem !important;
       margin-bottom: 0.15rem !important;
       padding-bottom: 0.08rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.01em !important;
     }
 
-    /* Améliorer le rendu des bordures */
+    /* Améliorer le rendu des bordures HIGH QUALITY */
     h2.border-b-2 {
-      border-bottom: 1.5px solid #3f3f46 !important;
+      border-bottom: 2px solid #3f3f46 !important;
+    }
+
+    .glass {
+      border: 1.5px solid #3f3f46 !important;
     }
 
     /* Forcer le layout row pour header */
@@ -606,23 +615,24 @@ import CVDownload from '../components/CVDownload';
       width: auto !important;
     }
 
-    /* Section Profil */
+    /* Section Profil COMPACT QUALITY */
     section:first-of-type p {
-      font-size: 0.62rem !important;
+      font-size: 0.64rem !important;
       line-height: 1.35 !important;
+      font-weight: 400 !important;
     }
 
-    /* Formations et expériences OPTIMIZED */
+    /* Formations et expériences COMPACT QUALITY */
     .space-y-3 {
-      gap: 0.2rem !important;
+      gap: 0.18rem !important;
     }
 
-    /* Forcer le layout des cartes en row OPTIMIZED */
+    /* Cartes COMPACT QUALITY */
     .glass {
       background: #27272a !important;
       border: 1px solid #3f3f46 !important;
       backdrop-filter: none !important;
-      padding: 0.25rem !important;
+      padding: 0.28rem 0.32rem !important;
       flex-direction: row !important;
       align-items: center !important;
     }
@@ -638,47 +648,52 @@ import CVDownload from '../components/CVDownload';
     }
 
     .glass img {
-      width: 1.5rem !important;
-      height: 1.5rem !important;
+      width: 1.4rem !important;
+      height: 1.4rem !important;
     }
 
     .glass h3 {
-      font-size: 0.65rem !important;
+      font-size: 0.68rem !important;
       margin-bottom: 0.08rem !important;
+      font-weight: 600 !important;
     }
 
     .glass p {
-      font-size: 0.6rem !important;
+      font-size: 0.62rem !important;
       margin-bottom: 0.08rem !important;
     }
 
-    /* Forcer les tailles de texte */
+    /* Tailles de texte COMPACT QUALITY */
     p {
-      font-size: 0.62rem !important;
+      font-size: 0.64rem !important;
     }
 
     h3 {
-      font-size: 0.65rem !important;
+      font-size: 0.68rem !important;
     }
 
     .glass ul {
-      font-size: 0.58rem !important;
+      font-size: 0.6rem !important;
       gap: 0.05rem !important;
       margin-top: 0.08rem !important;
     }
 
-    .glass span.text-xs {
-      font-size: 0.58rem !important;
+    .glass ul li {
+      line-height: 1.35 !important;
     }
 
-    /* Compétences - Forcer 2 colonnes OPTIMIZED */
+    .glass span.text-xs {
+      font-size: 0.6rem !important;
+    }
+
+    /* Compétences COMPACT QUALITY */
     .grid.gap-3 {
-      gap: 0.3rem !important;
+      gap: 0.25rem !important;
       grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .grid.gap-2 {
-      gap: 0.25rem !important;
+      gap: 0.2rem !important;
     }
 
     .flex-wrap {
@@ -687,34 +702,36 @@ import CVDownload from '../components/CVDownload';
     }
 
     .flex-wrap span {
-      padding: 0.15rem 0.3rem !important;
-      font-size: 0.5rem !important;
+      padding: 0.15rem 0.28rem !important;
+      font-size: 0.54rem !important;
       background: #27272a !important;
       border: 0.5px solid #52525b !important;
-      line-height: 1.2 !important;
+      line-height: 1.25 !important;
+      font-weight: 500 !important;
     }
 
-    /* Titres des compétences */
+    /* Titres des compétences COMPACT QUALITY */
     .glass h3 {
-      font-size: 0.62rem !important;
-      margin-bottom: 0.25rem !important;
-    }
-
-    /* Réduire padding des cartes de compétences OPTIMIZED */
-    section:nth-child(4) .glass {
-      padding: 0.3rem !important;
-    }
-
-    /* Langues - Optimisé */
-    section:has(+ footer) {
       font-size: 0.65rem !important;
+      margin-bottom: 0.22rem !important;
+      font-weight: 600 !important;
+    }
+
+    /* Padding des cartes de compétences COMPACT QUALITY */
+    section:nth-child(4) .glass {
+      padding: 0.28rem 0.32rem !important;
+    }
+
+    /* Langues COMPACT QUALITY */
+    section:has(+ footer) {
+      font-size: 0.66rem !important;
       margin-bottom: 0 !important;
       padding-top: 0 !important;
       padding-bottom: 0 !important;
     }
 
     section:has(+ footer) h2 {
-      font-size: 0.75rem !important;
+      font-size: 0.78rem !important;
       margin-bottom: 0.15rem !important;
       padding-bottom: 0.08rem !important;
     }
@@ -726,6 +743,7 @@ import CVDownload from '../components/CVDownload';
 
     section:has(+ footer) div {
       line-height: 1.4 !important;
+      font-weight: 500 !important;
     }
 
     /* Footer - Masquer en impression */
@@ -764,17 +782,34 @@ import CVDownload from '../components/CVDownload';
       opacity: 0 !important;
     }
 
-    /* Améliorer netteté des images */
+    /* Améliorer netteté des images HIGH QUALITY */
     img {
       image-rendering: high-quality !important;
       image-rendering: -webkit-optimize-contrast !important;
       image-rendering: crisp-edges !important;
+      -webkit-backface-visibility: hidden !important;
+      backface-visibility: hidden !important;
     }
 
-    /* Améliorer netteté du texte */
+    /* Améliorer netteté du texte HIGH QUALITY */
     * {
       transform: translateZ(0);
       backface-visibility: hidden;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+    }
+
+    /* Améliorer les contrastes */
+    body {
+      color: #ffffff !important;
+    }
+
+    .text-zinc-400 {
+      color: #a1a1aa !important;
+    }
+
+    .text-zinc-300 {
+      color: #d4d4d8 !important;
     }
 
     /* Assurer que le contenu se termine proprement */
@@ -786,46 +821,82 @@ import CVDownload from '../components/CVDownload';
 </style>
 
 <style is:inline>
-  /* EMERGENCY PRINT OVERRIDE V4 - OPTIMIZED SPACING */
+  /* EMERGENCY PRINT OVERRIDE V6 - COMPACT QUALITY */
   @media print {
-    /* Force optimized spacing - OVERRIDE ALL */
-    header { padding: 0.4rem !important; }
-    header h1 { font-size: 1.3rem !important; margin-bottom: 0.15rem !important; }
-    header p { font-size: 0.7rem !important; margin-bottom: 0.35rem !important; }
+    /* Force compact quality spacing - OVERRIDE ALL */
+    header { padding: 0.35rem 0.45rem !important; }
+    header h1 {
+      font-size: 1.35rem !important;
+      margin-bottom: 0.15rem !important;
+      font-weight: 700 !important;
+      letter-spacing: -0.01em !important;
+    }
+    header p {
+      font-size: 0.72rem !important;
+      margin-bottom: 0.3rem !important;
+      font-weight: 400 !important;
+    }
     header .grid { gap: 0.15rem !important; font-size: 0.62rem !important; }
-    header svg { width: 0.7rem !important; height: 0.7rem !important; }
+    header svg { width: 0.68rem !important; height: 0.68rem !important; }
 
-    .p-12 { padding: 0.4rem !important; }
-    .space-y-6 { gap: 0.25rem !important; }
-    .space-y-3 { gap: 0.2rem !important; }
+    .p-12 { padding: 0.35rem 0.45rem !important; }
+    .space-y-6 { gap: 0.22rem !important; }
+    .space-y-3 { gap: 0.18rem !important; }
 
     h2 {
-      font-size: 0.75rem !important;
+      font-size: 0.78rem !important;
       margin-bottom: 0.15rem !important;
       padding-bottom: 0.08rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.01em !important;
+    }
+
+    h2.border-b-2 {
+      border-bottom: 2px solid #3f3f46 !important;
     }
 
     .glass {
-      padding: 0.25rem !important;
+      padding: 0.28rem 0.32rem !important;
       flex-direction: row !important;
+      border: 1.5px solid #3f3f46 !important;
     }
 
-    /* SKILL BADGES - OPTIMIZED */
+    .glass h3 {
+      font-size: 0.68rem !important;
+      font-weight: 600 !important;
+    }
+
+    .glass p {
+      font-size: 0.62rem !important;
+    }
+
+    .glass ul {
+      font-size: 0.6rem !important;
+    }
+
+    /* SKILL BADGES - COMPACT QUALITY */
     .flex-wrap {
       gap: 0.15rem !important;
       row-gap: 0.15rem !important;
     }
 
     .flex-wrap span {
-      padding: 0.15rem 0.3rem !important;
-      font-size: 0.5rem !important;
+      padding: 0.15rem 0.28rem !important;
+      font-size: 0.54rem !important;
       border: 0.5px solid #52525b !important;
-      line-height: 1.2 !important;
+      line-height: 1.25 !important;
+      font-weight: 500 !important;
     }
 
-    .grid.gap-3 { gap: 0.3rem !important; }
-    .grid.gap-2 { gap: 0.25rem !important; }
+    .grid.gap-3 { gap: 0.25rem !important; }
+    .grid.gap-2 { gap: 0.2rem !important; }
 
-    section:nth-child(4) .glass { padding: 0.3rem !important; }
+    section:nth-child(4) .glass { padding: 0.28rem 0.32rem !important; }
+
+    /* QR Code compact */
+    .qr-code-container img {
+      width: 3.5rem !important;
+      height: 3.5rem !important;
+    }
   }
 </style>
