@@ -493,9 +493,11 @@ import CVDownload from '../components/CVDownload';
       print-color-adjust: exact !important;
       -webkit-print-color-adjust: exact !important;
       color-adjust: exact !important;
-      -webkit-font-smoothing: subpixel-antialiased;
-      -moz-osx-font-smoothing: auto;
-      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      text-rendering: geometricPrecision !important;
+      font-feature-settings: "kern" 1 !important;
+      image-rendering: -webkit-optimize-contrast !important;
     }
 
     html, body {
@@ -531,33 +533,33 @@ import CVDownload from '../components/CVDownload';
       overflow: hidden !important;
     }
 
-    /* Header COMPACT QUALITY */
+    /* Header SHARP QUALITY */
     header {
-      padding: 0.35rem 0.45rem !important;
+      padding: 0.25rem 0.4rem !important;
       background: linear-gradient(to bottom right, #18181b, #27272a, #18181b) !important;
     }
 
     header h1 {
-      font-size: 1.35rem !important;
-      margin-bottom: 0.15rem !important;
-      letter-spacing: -0.01em !important;
-      font-weight: 700 !important;
+      font-size: 1.45rem !important;
+      margin-bottom: 0.1rem !important;
+      letter-spacing: -0.005em !important;
+      font-weight: 800 !important;
     }
 
     header p {
-      font-size: 0.72rem !important;
-      margin-bottom: 0.3rem !important;
-      font-weight: 400 !important;
+      font-size: 0.78rem !important;
+      margin-bottom: 0.2rem !important;
+      font-weight: 500 !important;
     }
 
     header .grid {
-      gap: 0.15rem !important;
-      font-size: 0.62rem !important;
+      gap: 0.12rem !important;
+      font-size: 0.68rem !important;
     }
 
     header svg {
-      width: 0.68rem !important;
-      height: 0.68rem !important;
+      width: 0.72rem !important;
+      height: 0.72rem !important;
     }
 
     /* QR Code */
@@ -573,29 +575,30 @@ import CVDownload from '../components/CVDownload';
 
     /* Contenu principal COMPACT QUALITY */
     .p-12 {
-      padding: 0.35rem 0.45rem !important;
+      padding: 0.25rem 0.4rem !important;
     }
 
     .space-y-6 {
-      gap: 0.22rem !important;
+      gap: 0.15rem !important;
     }
 
-    /* Titres de sections COMPACT QUALITY */
+    /* Titres de sections SHARP QUALITY */
     h2 {
-      font-size: 0.78rem !important;
-      margin-bottom: 0.15rem !important;
-      padding-bottom: 0.08rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.01em !important;
+      font-size: 0.85rem !important;
+      margin-bottom: 0.12rem !important;
+      padding-bottom: 0.06rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.015em !important;
     }
 
-    /* Améliorer le rendu des bordures HIGH QUALITY */
+    /* Améliorer le rendu des bordures SHARP QUALITY */
     h2.border-b-2 {
-      border-bottom: 2px solid #3f3f46 !important;
+      border-bottom: 2px solid #52525b !important;
     }
 
     .glass {
-      border: 1.5px solid #3f3f46 !important;
+      border: 1px solid #52525b !important;
+      box-shadow: 0 0 0 0.5px rgba(82, 82, 91, 0.5) !important;
     }
 
     /* Forcer le layout row pour header */
@@ -615,24 +618,23 @@ import CVDownload from '../components/CVDownload';
       width: auto !important;
     }
 
-    /* Section Profil COMPACT QUALITY */
+    /* Section Profil SHARP QUALITY */
     section:first-of-type p {
-      font-size: 0.64rem !important;
+      font-size: 0.7rem !important;
       line-height: 1.35 !important;
-      font-weight: 400 !important;
+      font-weight: 500 !important;
     }
 
-    /* Formations et expériences COMPACT QUALITY */
+    /* Formations et expériences SHARP QUALITY */
     .space-y-3 {
-      gap: 0.18rem !important;
+      gap: 0.12rem !important;
     }
 
-    /* Cartes COMPACT QUALITY */
+    /* Cartes SHARP QUALITY */
     .glass {
       background: #27272a !important;
-      border: 1px solid #3f3f46 !important;
       backdrop-filter: none !important;
-      padding: 0.28rem 0.32rem !important;
+      padding: 0.24rem 0.28rem !important;
       flex-direction: row !important;
       align-items: center !important;
     }
@@ -653,97 +655,110 @@ import CVDownload from '../components/CVDownload';
     }
 
     .glass h3 {
-      font-size: 0.68rem !important;
+      font-size: 0.72rem !important;
       margin-bottom: 0.08rem !important;
-      font-weight: 600 !important;
+      font-weight: 700 !important;
     }
 
     .glass p {
-      font-size: 0.62rem !important;
+      font-size: 0.67rem !important;
       margin-bottom: 0.08rem !important;
+      font-weight: 500 !important;
     }
 
-    /* Tailles de texte COMPACT QUALITY */
+    /* Tailles de texte SHARP QUALITY */
     p {
-      font-size: 0.64rem !important;
+      font-size: 0.7rem !important;
+      font-weight: 500 !important;
     }
 
     h3 {
-      font-size: 0.68rem !important;
+      font-size: 0.72rem !important;
+      font-weight: 700 !important;
     }
 
     .glass ul {
-      font-size: 0.6rem !important;
-      gap: 0.05rem !important;
-      margin-top: 0.08rem !important;
+      font-size: 0.65rem !important;
+      gap: 0.03rem !important;
+      margin-top: 0.05rem !important;
     }
 
     .glass ul li {
       line-height: 1.35 !important;
+      font-weight: 500 !important;
     }
 
     .glass span.text-xs {
-      font-size: 0.6rem !important;
+      font-size: 0.65rem !important;
+      font-weight: 500 !important;
     }
 
-    /* Compétences COMPACT QUALITY */
+    /* Compétences SHARP QUALITY */
     .grid.gap-3 {
-      gap: 0.25rem !important;
+      gap: 0.2rem !important;
       grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .grid.gap-2 {
-      gap: 0.2rem !important;
+      gap: 0.15rem !important;
     }
 
     .flex-wrap {
-      gap: 0.15rem !important;
-      row-gap: 0.15rem !important;
+      gap: 0.12rem !important;
+      row-gap: 0.12rem !important;
     }
 
     .flex-wrap span {
-      padding: 0.15rem 0.28rem !important;
-      font-size: 0.54rem !important;
+      padding: 0.16rem 0.28rem !important;
+      font-size: 0.58rem !important;
       background: #27272a !important;
-      border: 0.5px solid #52525b !important;
-      line-height: 1.25 !important;
-      font-weight: 500 !important;
-    }
-
-    /* Titres des compétences COMPACT QUALITY */
-    .glass h3 {
-      font-size: 0.65rem !important;
-      margin-bottom: 0.22rem !important;
+      border: 1px solid #52525b !important;
+      line-height: 1.3 !important;
       font-weight: 600 !important;
     }
 
-    /* Padding des cartes de compétences COMPACT QUALITY */
-    section:nth-child(4) .glass {
-      padding: 0.28rem 0.32rem !important;
+    /* Titres des compétences SHARP QUALITY */
+    .glass h3 {
+      font-size: 0.7rem !important;
+      margin-bottom: 0.22rem !important;
+      font-weight: 700 !important;
     }
 
-    /* Langues COMPACT QUALITY */
+    /* Padding des cartes de compétences SHARP QUALITY */
+    section:nth-child(4) .glass {
+      padding: 0.24rem 0.28rem !important;
+    }
+
+    /* Reduce gap between skill grids */
+    section:nth-child(4) .grid.mt-3 {
+      margin-top: 0.15rem !important;
+    }
+
+    /* Langues SHARP QUALITY */
     section:has(+ footer) {
-      font-size: 0.66rem !important;
+      font-size: 0.72rem !important;
       margin-bottom: 0 !important;
+      margin-top: 0.15rem !important;
       padding-top: 0 !important;
       padding-bottom: 0 !important;
     }
 
     section:has(+ footer) h2 {
-      font-size: 0.78rem !important;
-      margin-bottom: 0.15rem !important;
-      padding-bottom: 0.08rem !important;
+      font-size: 0.85rem !important;
+      margin-bottom: 0.1rem !important;
+      padding-bottom: 0.05rem !important;
+      font-weight: 800 !important;
     }
 
     section:has(+ footer) .flex {
       gap: 1rem !important;
       flex-direction: row !important;
+      margin-top: 0 !important;
     }
 
     section:has(+ footer) div {
-      line-height: 1.4 !important;
-      font-weight: 500 !important;
+      line-height: 1.35 !important;
+      font-weight: 600 !important;
     }
 
     /* Footer - Masquer en impression */
@@ -799,17 +814,42 @@ import CVDownload from '../components/CVDownload';
       -moz-osx-font-smoothing: grayscale !important;
     }
 
-    /* Améliorer les contrastes */
+    /* Améliorer les contrastes SHARP */
     body {
-      color: #ffffff !important;
+      color: #fafafa !important;
     }
 
     .text-zinc-400 {
-      color: #a1a1aa !important;
+      color: #b4b4b8 !important;
     }
 
     .text-zinc-300 {
-      color: #d4d4d8 !important;
+      color: #e4e4e7 !important;
+    }
+
+    /* Améliorer les couleurs des badges compétences */
+    .text-blue-400 {
+      color: #60a5fa !important;
+    }
+
+    .text-purple-400 {
+      color: #c084fc !important;
+    }
+
+    .text-green-400 {
+      color: #4ade80 !important;
+    }
+
+    .text-yellow-400 {
+      color: #fbbf24 !important;
+    }
+
+    .text-orange-400 {
+      color: #fb923c !important;
+    }
+
+    .text-cyan-400 {
+      color: #22d3ee !important;
     }
 
     /* Assurer que le contenu se termine proprement */
@@ -821,82 +861,130 @@ import CVDownload from '../components/CVDownload';
 </style>
 
 <style is:inline>
-  /* EMERGENCY PRINT OVERRIDE V6 - COMPACT QUALITY */
+  /* EMERGENCY PRINT OVERRIDE V8 - ULTRA COMPACT */
   @media print {
-    /* Force compact quality spacing - OVERRIDE ALL */
-    header { padding: 0.35rem 0.45rem !important; }
+    /* Force sharp quality - OVERRIDE ALL */
+    header { padding: 0.25rem 0.4rem !important; }
     header h1 {
-      font-size: 1.35rem !important;
-      margin-bottom: 0.15rem !important;
-      font-weight: 700 !important;
-      letter-spacing: -0.01em !important;
+      font-size: 1.45rem !important;
+      margin-bottom: 0.1rem !important;
+      font-weight: 800 !important;
+      letter-spacing: -0.005em !important;
     }
     header p {
-      font-size: 0.72rem !important;
-      margin-bottom: 0.3rem !important;
-      font-weight: 400 !important;
+      font-size: 0.78rem !important;
+      margin-bottom: 0.2rem !important;
+      font-weight: 500 !important;
     }
-    header .grid { gap: 0.15rem !important; font-size: 0.62rem !important; }
-    header svg { width: 0.68rem !important; height: 0.68rem !important; }
+    header .grid { gap: 0.12rem !important; font-size: 0.68rem !important; }
+    header svg { width: 0.72rem !important; height: 0.72rem !important; }
 
-    .p-12 { padding: 0.35rem 0.45rem !important; }
-    .space-y-6 { gap: 0.22rem !important; }
-    .space-y-3 { gap: 0.18rem !important; }
+    .p-12 { padding: 0.25rem 0.4rem !important; }
+    .space-y-6 { gap: 0.15rem !important; }
+    .space-y-3 { gap: 0.12rem !important; }
 
     h2 {
-      font-size: 0.78rem !important;
-      margin-bottom: 0.15rem !important;
-      padding-bottom: 0.08rem !important;
-      font-weight: 700 !important;
-      letter-spacing: 0.01em !important;
+      font-size: 0.85rem !important;
+      margin-bottom: 0.12rem !important;
+      padding-bottom: 0.06rem !important;
+      font-weight: 800 !important;
+      letter-spacing: 0.015em !important;
     }
 
     h2.border-b-2 {
-      border-bottom: 2px solid #3f3f46 !important;
+      border-bottom: 2px solid #52525b !important;
     }
 
     .glass {
-      padding: 0.28rem 0.32rem !important;
+      padding: 0.24rem 0.28rem !important;
       flex-direction: row !important;
-      border: 1.5px solid #3f3f46 !important;
+      border: 1px solid #52525b !important;
+      box-shadow: 0 0 0 0.5px rgba(82, 82, 91, 0.5) !important;
     }
 
     .glass h3 {
-      font-size: 0.68rem !important;
-      font-weight: 600 !important;
+      font-size: 0.72rem !important;
+      font-weight: 700 !important;
     }
 
     .glass p {
-      font-size: 0.62rem !important;
-    }
-
-    .glass ul {
-      font-size: 0.6rem !important;
-    }
-
-    /* SKILL BADGES - COMPACT QUALITY */
-    .flex-wrap {
-      gap: 0.15rem !important;
-      row-gap: 0.15rem !important;
-    }
-
-    .flex-wrap span {
-      padding: 0.15rem 0.28rem !important;
-      font-size: 0.54rem !important;
-      border: 0.5px solid #52525b !important;
-      line-height: 1.25 !important;
+      font-size: 0.67rem !important;
       font-weight: 500 !important;
     }
 
-    .grid.gap-3 { gap: 0.25rem !important; }
-    .grid.gap-2 { gap: 0.2rem !important; }
+    .glass ul {
+      font-size: 0.65rem !important;
+      font-weight: 500 !important;
+      margin-top: 0.05rem !important;
+      gap: 0.03rem !important;
+    }
 
-    section:nth-child(4) .glass { padding: 0.28rem 0.32rem !important; }
+    .glass ul li {
+      line-height: 1.35 !important;
+    }
 
-    /* QR Code compact */
+    p {
+      font-size: 0.7rem !important;
+      font-weight: 500 !important;
+      line-height: 1.35 !important;
+    }
+
+    section:first-of-type p {
+      line-height: 1.35 !important;
+    }
+
+    /* SKILL BADGES - SHARP QUALITY */
+    .flex-wrap {
+      gap: 0.12rem !important;
+      row-gap: 0.12rem !important;
+    }
+
+    .flex-wrap span {
+      padding: 0.16rem 0.28rem !important;
+      font-size: 0.58rem !important;
+      border: 1px solid #52525b !important;
+      line-height: 1.3 !important;
+      font-weight: 600 !important;
+    }
+
+    .grid.gap-3 { gap: 0.2rem !important; }
+    .grid.gap-2 { gap: 0.15rem !important; }
+
+    section:nth-child(4) .glass { padding: 0.24rem 0.28rem !important; }
+
+    /* Reduce gap between skill grids */
+    section:nth-child(4) .grid.mt-3 {
+      margin-top: 0.15rem !important;
+    }
+
+    /* LANGUES section - ultra compact */
+    section:last-of-type {
+      margin-top: 0.15rem !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    section:last-of-type h2 {
+      margin-bottom: 0.1rem !important;
+      padding-bottom: 0.05rem !important;
+    }
+
+    section:last-of-type .flex {
+      gap: 1rem !important;
+      margin-top: 0 !important;
+    }
+
+    /* QR Code sharp */
     .qr-code-container img {
       width: 3.5rem !important;
       height: 3.5rem !important;
+    }
+
+    /* Améliorer netteté */
+    * {
+      -webkit-font-smoothing: antialiased !important;
+      -moz-osx-font-smoothing: grayscale !important;
+      text-rendering: geometricPrecision !important;
     }
   }
 </style>
