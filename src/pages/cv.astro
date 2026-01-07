@@ -486,6 +486,7 @@ import Layout from '../layouts/Layout.astro';
     color: #e4e4e7;
   }
 
+  /* PRINT STYLES V2.0 - FORCE RELOAD */
   @media print {
     @page {
       size: 210mm 297mm;
@@ -496,8 +497,9 @@ import Layout from '../layouts/Layout.astro';
       print-color-adjust: exact !important;
       -webkit-print-color-adjust: exact !important;
       color-adjust: exact !important;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
+      -webkit-font-smoothing: subpixel-antialiased;
+      -moz-osx-font-smoothing: auto;
+      text-rendering: optimizeLegibility;
     }
 
     html, body {
@@ -507,6 +509,7 @@ import Layout from '../layouts/Layout.astro';
       padding: 0 !important;
       height: 297mm !important;
       overflow: hidden !important;
+      image-rendering: high-quality;
       image-rendering: -webkit-optimize-contrast;
       image-rendering: crisp-edges;
     }
@@ -532,62 +535,62 @@ import Layout from '../layouts/Layout.astro';
       overflow: hidden !important;
     }
 
-    /* Compacter le header */
+    /* Compacter le header ULTRA v2 */
     header {
-      padding: 0.7rem !important;
+      padding: 0.25rem !important;
       background: linear-gradient(to bottom right, #18181b, #27272a, #18181b) !important;
     }
 
     header h1 {
-      font-size: 1.5rem !important;
-      margin-bottom: 0.25rem !important;
+      font-size: 1.1rem !important;
+      margin-bottom: 0.08rem !important;
       letter-spacing: -0.02em !important;
     }
 
     header p {
-      font-size: 0.7rem !important;
-      margin-bottom: 0.5rem !important;
+      font-size: 0.62rem !important;
+      margin-bottom: 0.3rem !important;
     }
 
     header .grid {
-      gap: 0.25rem !important;
-      font-size: 0.65rem !important;
+      gap: 0.12rem !important;
+      font-size: 0.58rem !important;
     }
 
     header svg {
-      width: 0.75rem !important;
-      height: 0.75rem !important;
+      width: 0.65rem !important;
+      height: 0.65rem !important;
     }
 
     /* QR Code */
     .qr-code-container img {
-      width: 3.5rem !important;
-      height: 3.5rem !important;
+      width: 3rem !important;
+      height: 3rem !important;
     }
 
     .qr-code-container + p {
-      font-size: 0.55rem !important;
+      font-size: 0.5rem !important;
     }
 
-    /* Compacter le contenu principal */
+    /* Compacter le contenu principal ULTRA v2 */
     .p-12 {
-      padding: 0.6rem !important;
+      padding: 0.25rem !important;
     }
 
     .space-y-6 {
-      gap: 0.38rem !important;
+      gap: 0.15rem !important;
     }
 
-    /* Titres de sections */
+    /* Titres de sections ULTRA v2 */
     h2 {
-      font-size: 0.82rem !important;
-      margin-bottom: 0.3rem !important;
-      padding-bottom: 0.15rem !important;
+      font-size: 0.68rem !important;
+      margin-bottom: 0.12rem !important;
+      padding-bottom: 0.06rem !important;
     }
 
     /* Améliorer le rendu des bordures */
     h2.border-b-2 {
-      border-bottom: 2px solid #3f3f46 !important;
+      border-bottom: 1.5px solid #3f3f46 !important;
     }
 
     /* Forcer le layout row pour header */
@@ -609,21 +612,21 @@ import Layout from '../layouts/Layout.astro';
 
     /* Section Profil */
     section:first-of-type p {
-      font-size: 0.58rem !important;
-      line-height: 1.3 !important;
+      font-size: 0.55rem !important;
+      line-height: 1.25 !important;
     }
 
-    /* Formations et expériences */
+    /* Formations et expériences ULTRA COMPACT v2 */
     .space-y-3 {
-      gap: 0.3rem !important;
+      gap: 0.12rem !important;
     }
 
-    /* Forcer le layout des cartes en row */
+    /* Forcer le layout des cartes en row ULTRA v2 */
     .glass {
       background: #27272a !important;
       border: 1px solid #3f3f46 !important;
       backdrop-filter: none !important;
-      padding: 0.35rem !important;
+      padding: 0.18rem !important;
       flex-direction: row !important;
       align-items: center !important;
     }
@@ -639,87 +642,94 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .glass img {
-      width: 1.5rem !important;
-      height: 1.5rem !important;
+      width: 1.3rem !important;
+      height: 1.3rem !important;
     }
 
     .glass h3 {
-      font-size: 0.64rem !important;
-      margin-bottom: 0.09rem !important;
+      font-size: 0.6rem !important;
+      margin-bottom: 0.05rem !important;
     }
 
     .glass p {
-      font-size: 0.57rem !important;
-      margin-bottom: 0.09rem !important;
+      font-size: 0.54rem !important;
+      margin-bottom: 0.05rem !important;
     }
 
     /* Forcer les tailles de texte */
     p {
-      font-size: 0.58rem !important;
+      font-size: 0.55rem !important;
     }
 
     h3 {
-      font-size: 0.64rem !important;
+      font-size: 0.6rem !important;
     }
 
     .glass ul {
-      font-size: 0.52rem !important;
-      gap: 0.05rem !important;
-      margin-top: 0.09rem !important;
+      font-size: 0.5rem !important;
+      gap: 0.03rem !important;
+      margin-top: 0.05rem !important;
     }
 
     .glass span.text-xs {
-      font-size: 0.52rem !important;
+      font-size: 0.5rem !important;
     }
 
-    /* Compétences - Forcer 2 colonnes */
+    /* Compétences - Forcer 2 colonnes v2 */
     .grid.gap-3 {
-      gap: 0.3rem !important;
+      gap: 0.2rem !important;
       grid-template-columns: repeat(2, 1fr) !important;
     }
 
     .grid.gap-2 {
-      gap: 0.24rem !important;
+      gap: 0.15rem !important;
     }
 
     .flex-wrap {
-      gap: 0.24rem !important;
+      gap: 0.03rem !important;
+      row-gap: 0.03rem !important;
     }
 
     .flex-wrap span {
-      padding: 0.11rem 0.28rem !important;
-      font-size: 0.52rem !important;
+      padding: 0.04rem 0.12rem !important;
+      font-size: 0.42rem !important;
       background: #27272a !important;
-      border: 1px solid #52525b !important;
+      border: 0.5px solid #52525b !important;
+      line-height: 1 !important;
     }
 
     /* Titres des compétences */
     .glass h3 {
-      font-size: 0.6rem !important;
-      margin-bottom: 0.24rem !important;
+      font-size: 0.57rem !important;
+      margin-bottom: 0.18rem !important;
     }
 
-    /* Langues - Visible et bien espacé */
+    /* Réduire padding des cartes de compétences v2 */
+    section:nth-child(4) .glass {
+      padding: 0.2rem !important;
+    }
+
+    /* Langues - Compacté */
     section:has(+ footer) {
-      font-size: 0.65rem !important;
-      margin-bottom: 0.35rem !important;
-      padding-top: 0.35rem !important;
-      padding-bottom: 0.25rem !important;
+      font-size: 0.6rem !important;
+      margin-bottom: 0.25rem !important;
+      padding-top: 0.25rem !important;
+      padding-bottom: 0.2rem !important;
     }
 
     section:has(+ footer) h2 {
-      font-size: 0.82rem !important;
-      margin-bottom: 0.3rem !important;
-      padding-bottom: 0.15rem !important;
+      font-size: 0.75rem !important;
+      margin-bottom: 0.2rem !important;
+      padding-bottom: 0.1rem !important;
     }
 
     section:has(+ footer) .flex {
-      gap: 1rem !important;
+      gap: 0.8rem !important;
       flex-direction: row !important;
     }
 
     section:has(+ footer) div {
-      line-height: 1.5 !important;
+      line-height: 1.3 !important;
     }
 
     /* Footer - Masquer en impression */
@@ -743,17 +753,32 @@ import Layout from '../layouts/Layout.astro';
       -webkit-print-color-adjust: exact !important;
     }
 
-    /* QR code en impression avec dégradé gris */
+    /* QR code en impression avec dégradé gris HD */
     .qr-code-container {
       background: linear-gradient(to right, #fafafa 0%, #a1a1aa 100%) !important;
       -webkit-mask: url('/qr-code.png') center/contain no-repeat !important;
       mask: url('/qr-code.png') center/contain no-repeat !important;
       print-color-adjust: exact !important;
       -webkit-print-color-adjust: exact !important;
+      image-rendering: high-quality !important;
+      image-rendering: -webkit-optimize-contrast !important;
     }
 
     .qr-code-container img {
       opacity: 0 !important;
+    }
+
+    /* Améliorer netteté des images */
+    img {
+      image-rendering: high-quality !important;
+      image-rendering: -webkit-optimize-contrast !important;
+      image-rendering: crisp-edges !important;
+    }
+
+    /* Améliorer netteté du texte */
+    * {
+      transform: translateZ(0);
+      backface-visibility: hidden;
     }
 
     /* Assurer que le contenu se termine proprement */
@@ -761,5 +786,50 @@ import Layout from '../layouts/Layout.astro';
       page-break-after: avoid !important;
       margin-bottom: 0 !important;
     }
+  }
+</style>
+
+<style is:inline>
+  /* EMERGENCY PRINT OVERRIDE V3 - DIRECT INJECTION */
+  @media print {
+    /* Force ultra compact spacing - OVERRIDE ALL */
+    header { padding: 0.25rem !important; }
+    header h1 { font-size: 1.1rem !important; margin-bottom: 0.08rem !important; }
+    header p { font-size: 0.62rem !important; margin-bottom: 0.3rem !important; }
+    header .grid { gap: 0.12rem !important; font-size: 0.58rem !important; }
+    header svg { width: 0.65rem !important; height: 0.65rem !important; }
+
+    .p-12 { padding: 0.25rem !important; }
+    .space-y-6 { gap: 0.15rem !important; }
+    .space-y-3 { gap: 0.12rem !important; }
+
+    h2 {
+      font-size: 0.68rem !important;
+      margin-bottom: 0.12rem !important;
+      padding-bottom: 0.06rem !important;
+    }
+
+    .glass {
+      padding: 0.18rem !important;
+      flex-direction: row !important;
+    }
+
+    /* SKILL BADGES - SUPER COMPACT */
+    .flex-wrap {
+      gap: 0.03rem !important;
+      row-gap: 0.03rem !important;
+    }
+
+    .flex-wrap span {
+      padding: 0.04rem 0.12rem !important;
+      font-size: 0.42rem !important;
+      border: 0.5px solid #52525b !important;
+      line-height: 1 !important;
+    }
+
+    .grid.gap-3 { gap: 0.2rem !important; }
+    .grid.gap-2 { gap: 0.15rem !important; }
+
+    section:nth-child(4) .glass { padding: 0.2rem !important; }
   }
 </style>

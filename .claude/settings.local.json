@@ -12,7 +12,8 @@
       "Bash(move qr-code.png publicqr-code.png)",
       "Bash(copy qr-code.png publicqr-code.png /Y)",
       "Bash(cmd /c \"copy qr-code.png public\\\\qr-code.png\")",
-      "Bash(powershell:*)"
+      "Bash(powershell:*)",
+      "Bash(npm run build:*)"
     ]
   }
 }
