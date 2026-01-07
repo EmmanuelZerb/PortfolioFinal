@@ -24,12 +24,12 @@ export default function Contact() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:zerbibemmanuel25@gmail.com"
-              className="group px-8 py-4 glass rounded-full hover:bg-zinc-800/70 transition-all duration-300 inline-flex items-center justify-center gap-2"
+              className="group px-6 sm:px-8 py-4 glass rounded-full hover:bg-zinc-800/70 transition-all duration-300 inline-flex items-center justify-center gap-2 text-sm sm:text-base break-all sm:break-normal"
             >
-              <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg className="w-5 h-5 flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
-              <span>zerbibemmanuel25@gmail.com</span>
+              <span className="truncate">zerbibemmanuel25@gmail.com</span>
             </a>
           </div>
 

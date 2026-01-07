@@ -62,11 +62,11 @@ export default function Journey() {
           </h2>
         </motion.div>
 
-        <div className="relative pl-24">
+        <div className="relative pl-4 sm:pl-16 md:pl-24">
           {/* Ligne verticale à gauche */}
-          <div className="absolute left-16 top-0 bottom-0 w-px bg-gradient-to-b from-zinc-700 via-zinc-800 to-transparent" />
+          <div className="absolute left-0 sm:left-12 md:left-16 top-0 bottom-0 w-px bg-gradient-to-b from-zinc-700 via-zinc-800 to-transparent" />
 
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-16">
             {timeline.map((item, index) => (
               <motion.div
                 key={`${item.formation.title}-${index}`}
@@ -74,10 +74,10 @@ export default function Journey() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative"
+                className="relative pl-8 sm:pl-0"
               >
                 {/* Année sticky */}
-                <div className="absolute left-[-88px] top-8">
+                <div className="absolute left-4 sm:left-[-88px] top-2 sm:top-8">
                   <span className="text-zinc-600 font-mono text-xs font-semibold">
                     {item.formation.year.split(' - ')[0]}
                   </span>
