@@ -7,6 +7,7 @@ const timeline = [
       title: 'Cycle Ingénieur (Majeure DATA - IA)',
       organization: 'ECE Paris',
       description: 'Formation d\'ingénieur spécialisée en Data Science et Intelligence Artificielle.',
+      highlight: true,
     },
     experience: {
       year: '2024 - Présent',
@@ -90,16 +91,23 @@ export default function Journey() {
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: index * 0.1 + 0.2 }}
                     whileHover={{ backgroundColor: 'rgba(39, 39, 42, 0.7)' }}
-                    className="bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 p-6 rounded-2xl"
+                    className={`bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 p-6 rounded-2xl ${
+                      item.formation.highlight ? 'ring-1 ring-zinc-700/50' : ''
+                    }`}
                     style={{ willChange: 'opacity, transform' }}
                   >
-                    <div className="flex items-center gap-2 mb-3">
+                    <div className="flex items-center gap-2 mb-3 flex-wrap">
                       <span className="text-zinc-400 font-mono text-xs uppercase tracking-wider">
                         Formation
                       </span>
                       <span className="text-zinc-600 font-mono text-xs">
                         · {item.formation.year}
                       </span>
+                      {item.formation.highlight && (
+                        <span className="px-2 py-0.5 bg-zinc-800/70 border border-zinc-700/50 rounded text-zinc-400 font-mono text-xs">
+                          En cours
+                        </span>
+                      )}
                     </div>
                     <h3 className="text-xl font-semibold mb-2">{item.formation.title}</h3>
                     <p className="text-zinc-300 mb-2 font-medium">
