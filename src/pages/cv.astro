@@ -3,19 +3,37 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="CV - Emmanuel Zerbib">
-  <div class="cv-container bg-zinc-950 text-zinc-100 min-h-screen p-8 print:p-0">
-    <div class="max-w-[210mm] mx-auto bg-zinc-900 shadow-2xl print:shadow-none">
+  <div class="cv-container bg-zinc-950 text-zinc-100 min-h-screen p-4 sm:p-6 md:p-8 print:p-0">
+    <!-- Language buttons -->
+    <div class="flex justify-center gap-2 sm:gap-3 mb-4 sm:mb-6 print:hidden">
+      <button
+        id="btn-fr"
+        onclick="switchLanguage('fr')"
+        class="lang-btn lang-btn-active px-4 py-2 sm:px-6 sm:py-3 rounded-full transition-all duration-300 font-medium border-2 text-sm sm:text-base"
+      >
+        Français
+      </button>
+      <button
+        id="btn-en"
+        onclick="switchLanguage('en')"
+        class="lang-btn px-4 py-2 sm:px-6 sm:py-3 rounded-full transition-all duration-300 font-medium border-2 border-zinc-700 hover:border-zinc-500 text-sm sm:text-base"
+      >
+        English
+      </button>
+    </div>
+
+    <div class="max-w-full md:max-w-[210mm] mx-auto bg-zinc-900 shadow-2xl print:shadow-none">
       <!-- Header -->
-      <header class="relative overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-12 print:p-6 print:bg-gradient-to-br print:from-zinc-900 print:via-zinc-800 print:to-zinc-900">
+      <header class="relative overflow-hidden bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-900 p-4 sm:p-6 md:p-8 lg:p-12 print:p-6 print:bg-gradient-to-br print:from-zinc-900 print:via-zinc-800 print:to-zinc-900">
         <div class="relative z-10">
-          <div class="flex justify-between items-start gap-8">
-            <div class="flex-1">
-              <h1 class="text-5xl font-bold mb-2 print:text-3xl">
+          <div class="flex flex-col md:flex-row justify-between items-start md:items-start gap-4 md:gap-8">
+            <div class="flex-1 w-full">
+              <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-2 print:text-3xl">
                 EMMANUEL <span class="gradient-text">ZERBIB</span>
               </h1>
-              <p class="text-xl text-zinc-400 mb-6 print:text-base">Étudiant Ingénieur · Développeur IA</p>
+              <p class="text-base sm:text-lg md:text-xl text-zinc-400 mb-4 sm:mb-6 print:text-base" data-i18n="subtitle">Étudiant Ingénieur · Développeur IA</p>
 
-              <div class="grid grid-cols-2 gap-x-6 gap-y-2 text-sm text-zinc-400 print:text-xs mb-4">
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 sm:gap-x-6 gap-y-2 text-xs sm:text-sm text-zinc-400 print:text-xs mb-4">
                 <a
                   href="mailto:zerbibemmanuel25@gmail.com"
                   class="flex items-center gap-2 hover:text-zinc-300 transition-colors group"
@@ -64,7 +82,7 @@ import Layout from '../layouts/Layout.astro';
                   href="https://www.google.com/maps/search/?api=1&query=94700+Maisons-Alfort"
                   target="_blank"
                   rel="noopener noreferrer"
-                  class="flex items-center gap-2 hover:text-zinc-300 transition-colors group col-span-2"
+                  class="flex items-center gap-2 hover:text-zinc-300 transition-colors group sm:col-span-2"
                 >
                   <svg class="w-4 h-4 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
@@ -76,7 +94,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <!-- QR Code Portfolio -->
-            <div class="flex flex-col items-center gap-2 flex-shrink-0">
+            <div class="flex flex-col items-center justify-center gap-2 flex-shrink-0 md:w-auto w-full md:mt-0 mt-4">
               <a
                 href="https://ap3gr8.sio1-2lerebours.org/"
                 target="_blank"
@@ -87,7 +105,7 @@ import Layout from '../layouts/Layout.astro';
                   <img
                     src="/qr-code.png"
                     alt="Portfolio QR Code"
-                    class="w-28 h-28 print:w-24 print:h-24"
+                    class="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 print:w-24 print:h-24"
                   />
                 </div>
                 <p class="text-xs text-zinc-400 text-center font-medium group-hover:text-zinc-300 transition-colors">Portfolio</p>
@@ -97,13 +115,13 @@ import Layout from '../layouts/Layout.astro';
         </div>
       </header>
 
-      <div class="p-12 print:p-6 space-y-6 print:space-y-4">
+      <div class="p-4 sm:p-6 md:p-8 lg:p-12 print:p-6 space-y-4 sm:space-y-6 print:space-y-4">
         <!-- Profil -->
         <section>
-          <h2 class="text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2">
+          <h2 class="text-xl sm:text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2" data-i18n="profileTitle">
             PROFIL
           </h2>
-          <p class="text-zinc-300 leading-relaxed text-sm print:text-xs">
+          <p class="text-zinc-300 leading-relaxed text-sm sm:text-base print:text-xs" data-i18n="profileText">
             Diplômé d'un BTS SIO SLAM et d'une Licence STS en Informatique, je poursuis
             un cycle ingénieur à l'ECE Paris. Passionné par l'intelligence artificielle,
             les modèles de langage et le développement de solutions innovantes. Actuellement
@@ -113,51 +131,51 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Formations -->
         <section>
-          <h2 class="text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2">
+          <h2 class="text-xl sm:text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2" data-i18n="formationsTitle">
             FORMATIONS
           </h2>
           <div class="space-y-3 print:space-y-2">
-            <div class="glass p-3 rounded-lg print:p-2 flex items-center gap-3">
-              <img src="/ece-logo.png" alt="ECE Paris" class="w-12 h-12 object-contain flex-shrink-0" />
-              <div class="flex-1">
-                <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-semibold text-base">Cycle Ingénieur (Majeure DATA - IA)</h3>
-                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap ml-2">2025 - 2028</span>
+            <div class="glass p-3 rounded-lg print:p-2 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <img src="/ece-logo.png" alt="ECE Paris" class="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0" />
+              <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 gap-1 sm:gap-0">
+                  <h3 class="font-semibold text-sm sm:text-base" data-i18n="edu1Title">Cycle Ingénieur (Majeure DATA - IA)</h3>
+                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap sm:ml-2">2025 - 2028</span>
                 </div>
-                <p class="text-zinc-400 text-sm">ECE Paris</p>
+                <p class="text-zinc-400 text-xs sm:text-sm">ECE Paris</p>
               </div>
             </div>
 
-            <div class="glass p-3 rounded-lg print:p-2 flex items-center gap-3">
-              <img src="/cnam-logo.png" alt="CNAM" class="w-12 h-12 object-contain flex-shrink-0" />
-              <div class="flex-1">
-                <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-semibold text-base">Licence STS</h3>
-                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap ml-2">2024 - 2025</span>
+            <div class="glass p-3 rounded-lg print:p-2 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <img src="/cnam-logo.png" alt="CNAM" class="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0" />
+              <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 gap-1 sm:gap-0">
+                  <h3 class="font-semibold text-sm sm:text-base" data-i18n="edu2Title">Licence STS</h3>
+                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap sm:ml-2">2024 - 2025</span>
                 </div>
-                <p class="text-zinc-400 text-sm">CNAM - Développement informatique, Intelligence Artificielle et Big Data</p>
+                <p class="text-zinc-400 text-xs sm:text-sm" data-i18n="edu2Desc">CNAM - Développement informatique, Intelligence Artificielle et Big Data</p>
               </div>
             </div>
 
-            <div class="glass p-3 rounded-lg print:p-2 flex items-center gap-3">
-              <img src="/rebours-logo.png" alt="Le Rebours" class="w-12 h-12 object-contain flex-shrink-0" />
-              <div class="flex-1">
-                <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-semibold text-base">BTS SIO SLAM</h3>
-                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap ml-2">2022 - 2024</span>
+            <div class="glass p-3 rounded-lg print:p-2 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <img src="/rebours-logo.png" alt="Le Rebours" class="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0" />
+              <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 gap-1 sm:gap-0">
+                  <h3 class="font-semibold text-sm sm:text-base" data-i18n="edu3Title">BTS SIO SLAM</h3>
+                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap sm:ml-2">2022 - 2024</span>
                 </div>
-                <p class="text-zinc-400 text-sm">Le Rebours - Service Informatique aux Organisations</p>
+                <p class="text-zinc-400 text-xs sm:text-sm" data-i18n="edu3Desc">Le Rebours - Service Informatique aux Organisations</p>
               </div>
             </div>
 
-            <div class="glass p-3 rounded-lg print:p-2 flex items-center gap-3">
-              <img src="/ort-logo.png" alt="ORT Daniel Mayer" class="w-12 h-12 object-contain flex-shrink-0" />
-              <div class="flex-1">
-                <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-semibold text-base">Bac Pro Système Numérique</h3>
-                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap ml-2">2019 - 2022</span>
+            <div class="glass p-3 rounded-lg print:p-2 flex flex-col sm:flex-row items-start sm:items-center gap-3">
+              <img src="/ort-logo.png" alt="ORT Daniel Mayer" class="w-10 h-10 sm:w-12 sm:h-12 object-contain flex-shrink-0" />
+              <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 gap-1 sm:gap-0">
+                  <h3 class="font-semibold text-sm sm:text-base" data-i18n="edu4Title">Bac Pro Système Numérique</h3>
+                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap sm:ml-2">2019 - 2022</span>
                 </div>
-                <p class="text-zinc-400 text-sm">ORT Daniel Mayer - Mention Bien</p>
+                <p class="text-zinc-400 text-xs sm:text-sm" data-i18n="edu4Desc">ORT Daniel Mayer - Mention Bien</p>
               </div>
             </div>
           </div>
@@ -165,53 +183,53 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Expériences -->
         <section>
-          <h2 class="text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2">
+          <h2 class="text-xl sm:text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2" data-i18n="experiencesTitle">
             EXPÉRIENCES PROFESSIONNELLES
           </h2>
           <div class="space-y-3 print:space-y-2">
-            <div class="glass p-3 rounded-lg print:p-2 flex items-start gap-3">
-              <img src="/mes-potos.png" alt="Mon Ami Poto" class="w-10 h-10 object-contain flex-shrink-0 mt-1" />
-              <div class="flex-1">
-                <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-semibold text-base">Développeur LLM</h3>
-                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap ml-2">2024 - 2025</span>
+            <div class="glass p-3 rounded-lg print:p-2 flex flex-col sm:flex-row items-start gap-3">
+              <img src="/mes-potos.png" alt="Mon Ami Poto" class="w-10 h-10 object-contain flex-shrink-0 sm:mt-1" />
+              <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 gap-1 sm:gap-0">
+                  <h3 class="font-semibold text-sm sm:text-base" data-i18n="exp1Title">Développeur LLM</h3>
+                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap sm:ml-2">2024 - 2025</span>
                 </div>
-                <p class="text-purple-400 mb-1 text-sm">Mon Ami Poto - Alternance</p>
+                <p class="text-purple-400 mb-1 text-xs sm:text-sm" data-i18n="exp1Company">Mon Ami Poto - Alternance</p>
                 <ul class="list-disc list-inside text-zinc-400 text-xs space-y-0.5 print:text-[11px]">
-                  <li>Développement d'applications IA en Python</li>
-                  <li>Conception et développement d'agents intelligents et assistants virtuels</li>
-                  <li>Intégration d'APIs IA et automatisation de workflows conversationnels</li>
+                  <li data-i18n="exp1Task1">Développement d'applications IA en Python</li>
+                  <li data-i18n="exp1Task2">Conception et développement d'agents intelligents et assistants virtuels</li>
+                  <li data-i18n="exp1Task3">Intégration d'APIs IA et automatisation de workflows conversationnels</li>
                 </ul>
               </div>
             </div>
 
-            <div class="glass p-3 rounded-lg print:p-2 flex items-start gap-3">
-              <img src="/opendu17.png" alt="TenniSport - OpenDu17" class="w-10 h-10 object-contain flex-shrink-0 mt-1" />
-              <div class="flex-1">
-                <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-semibold text-base">Développeur Web</h3>
-                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap ml-2">2023 - 2024</span>
+            <div class="glass p-3 rounded-lg print:p-2 flex flex-col sm:flex-row items-start gap-3">
+              <img src="/opendu17.png" alt="TenniSport - OpenDu17" class="w-10 h-10 object-contain flex-shrink-0 sm:mt-1" />
+              <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 gap-1 sm:gap-0">
+                  <h3 class="font-semibold text-sm sm:text-base" data-i18n="exp2Title">Développeur Web</h3>
+                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap sm:ml-2">2023 - 2024</span>
                 </div>
-                <p class="text-purple-400 mb-1 text-sm">TenniSport - OpenDu17</p>
+                <p class="text-purple-400 mb-1 text-xs sm:text-sm">TenniSport - OpenDu17</p>
                 <ul class="list-disc list-inside text-zinc-400 text-xs space-y-0.5 print:text-[11px]">
-                  <li>Maintenance et développement de sites WordPress</li>
-                  <li>Analyse des performances avec Google Analytics</li>
+                  <li data-i18n="exp2Task1">Maintenance et développement de sites WordPress</li>
+                  <li data-i18n="exp2Task2">Analyse des performances avec Google Analytics</li>
                 </ul>
               </div>
             </div>
 
-            <div class="glass p-3 rounded-lg print:p-2 flex items-start gap-3">
-              <img src="/rs2i.png" alt="RS2I" class="w-10 h-10 object-contain flex-shrink-0 mt-1" />
-              <div class="flex-1">
-                <div class="flex justify-between items-start mb-1">
-                  <h3 class="font-semibold text-base">Assistant Administrateur Systèmes</h3>
-                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap ml-2">2023</span>
+            <div class="glass p-3 rounded-lg print:p-2 flex flex-col sm:flex-row items-start gap-3">
+              <img src="/rs2i.png" alt="RS2I" class="w-10 h-10 object-contain flex-shrink-0 sm:mt-1" />
+              <div class="flex-1 w-full">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-start mb-1 gap-1 sm:gap-0">
+                  <h3 class="font-semibold text-sm sm:text-base" data-i18n="exp3Title">Assistant Administrateur Systèmes</h3>
+                  <span class="text-xs text-zinc-400 font-mono whitespace-nowrap sm:ml-2">2023</span>
                 </div>
-                <p class="text-purple-400 mb-1 text-sm">RS2I</p>
+                <p class="text-purple-400 mb-1 text-xs sm:text-sm">RS2I</p>
                 <ul class="list-disc list-inside text-zinc-400 text-xs space-y-0.5 print:text-[11px]">
-                  <li>Gestion du serveur PowerEdge R620</li>
-                  <li>Déploiement et gestion de machines virtuelles</li>
-                  <li>Réinitialisation d'ordinateurs et installation de Windows</li>
+                  <li data-i18n="exp3Task1">Gestion du serveur PowerEdge R620</li>
+                  <li data-i18n="exp3Task2">Déploiement et gestion de machines virtuelles</li>
+                  <li data-i18n="exp3Task3">Réinitialisation d'ordinateurs et installation de Windows</li>
                 </ul>
               </div>
             </div>
@@ -220,12 +238,12 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Compétences -->
         <section>
-          <h2 class="text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2">
+          <h2 class="text-xl sm:text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2" data-i18n="competencesTitle">
             COMPÉTENCES
           </h2>
-          <div class="grid grid-cols-2 gap-3 print:gap-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 print:gap-2">
             <div class="glass p-3 rounded-lg print:p-2">
-              <h3 class="font-semibold mb-2 text-sm text-blue-400">Langages</h3>
+              <h3 class="font-semibold mb-2 text-sm text-blue-400" data-i18n="skillLanguages">Langages</h3>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">Python</span>
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">JavaScript</span>
@@ -237,7 +255,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="glass p-3 rounded-lg print:p-2">
-              <h3 class="font-semibold mb-2 text-sm text-purple-400">Frameworks & Libraries</h3>
+              <h3 class="font-semibold mb-2 text-sm text-purple-400" data-i18n="skillFrameworks">Frameworks & Libraries</h3>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">React</span>
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">FastAPI</span>
@@ -249,7 +267,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="glass p-3 rounded-lg print:p-2">
-              <h3 class="font-semibold mb-2 text-sm text-green-400">IA & Data Science</h3>
+              <h3 class="font-semibold mb-2 text-sm text-green-400" data-i18n="skillAI">IA & Data Science</h3>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">OpenAI Platform</span>
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">Claude (Anthropic)</span>
@@ -260,7 +278,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="glass p-3 rounded-lg print:p-2">
-              <h3 class="font-semibold mb-2 text-sm text-yellow-400">UI/UX & Styling</h3>
+              <h3 class="font-semibold mb-2 text-sm text-yellow-400" data-i18n="skillUIUX">UI/UX & Styling</h3>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">TailwindCSS</span>
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">Bootstrap</span>
@@ -269,9 +287,9 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
 
-          <div class="grid grid-cols-2 gap-3 mt-3 print:gap-2 print:mt-2">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-3 print:gap-2 print:mt-2">
             <div class="glass p-3 rounded-lg print:p-2">
-              <h3 class="font-semibold mb-2 text-sm text-orange-400">Bases de données</h3>
+              <h3 class="font-semibold mb-2 text-sm text-orange-400" data-i18n="skillDatabases">Bases de données</h3>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">MySQL</span>
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">MariaDB</span>
@@ -281,7 +299,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
 
             <div class="glass p-3 rounded-lg print:p-2">
-              <h3 class="font-semibold mb-2 text-sm text-cyan-400">Outils & DevOps</h3>
+              <h3 class="font-semibold mb-2 text-sm text-cyan-400" data-i18n="skillTools">Outils & DevOps</h3>
               <div class="flex flex-wrap gap-2">
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">Git</span>
                 <span class="px-2 py-1 text-xs bg-zinc-800 border border-zinc-700 rounded font-mono">Docker</span>
@@ -294,16 +312,16 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Langues -->
         <section>
-          <h2 class="text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2">
+          <h2 class="text-xl sm:text-2xl font-bold mb-3 pb-2 border-b-2 border-zinc-700 gradient-text print:text-base print:mb-2" data-i18n="languesTitle">
             LANGUES
           </h2>
-          <div class="flex gap-8 text-sm">
+          <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 text-sm">
             <div>
-              <span class="font-semibold">Français :</span>
-              <span class="text-zinc-400"> Natif</span>
+              <span class="font-semibold" data-i18n="langFrench">Français :</span>
+              <span class="text-zinc-400" data-i18n="langNative"> Natif</span>
             </div>
             <div>
-              <span class="font-semibold">Anglais :</span>
+              <span class="font-semibold" data-i18n="langEnglish">Anglais :</span>
               <span class="text-zinc-400"> B2</span>
             </div>
           </div>
@@ -311,70 +329,161 @@ import Layout from '../layouts/Layout.astro';
       </div>
 
       <!-- Footer -->
-      <footer class="bg-zinc-900 p-6 text-center text-zinc-500 text-sm print:p-4">
+      <footer class="bg-zinc-900 p-4 sm:p-6 text-center text-zinc-500 text-sm print:p-4">
         <p class="text-xs">Développé avec Astro, React & Three.js</p>
       </footer>
     </div>
 
     <!-- Action buttons -->
-    <div class="text-center mt-8 print:hidden">
+    <div class="text-center mt-6 sm:mt-8 px-4 print:hidden">
       <button
         onclick="window.print()"
-        class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-300 inline-flex items-center gap-3 font-medium text-lg"
+        class="px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 hover:bg-blue-700 rounded-full transition-all duration-300 inline-flex items-center gap-2 sm:gap-3 font-medium text-base sm:text-lg"
       >
-        <svg class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg class="w-5 h-5 sm:w-6 sm:h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
         </svg>
-        <span>Imprimer / Télécharger PDF</span>
+        <span data-i18n="printButton">Imprimer / Télécharger PDF</span>
       </button>
-      <p class="text-sm text-zinc-500 mt-4">
+      <p class="text-xs sm:text-sm text-zinc-500 mt-3 sm:mt-4 px-4" data-i18n="printInfo">
         Choisissez votre imprimante pour imprimer ou "Enregistrer en PDF" pour télécharger
       </p>
     </div>
   </div>
 </Layout>
 
+<script is:inline>
+  const translations = {
+    fr: {
+      subtitle: "Étudiant Ingénieur · Développeur IA",
+      profileTitle: "PROFIL",
+      profileText: "Diplômé d'un BTS SIO SLAM et d'une Licence STS en Informatique, je poursuis un cycle ingénieur à l'ECE Paris. Passionné par l'intelligence artificielle, les modèles de langage et le développement de solutions innovantes. Actuellement en alternance pour développer mes compétences en IA, Big Data et développement logiciel.",
+      formationsTitle: "FORMATIONS",
+      edu1Title: "Cycle Ingénieur (Majeure DATA - IA)",
+      edu2Title: "Licence STS",
+      edu2Desc: "CNAM - Développement informatique, Intelligence Artificielle et Big Data",
+      edu3Title: "BTS SIO SLAM",
+      edu3Desc: "Le Rebours - Service Informatique aux Organisations",
+      edu4Title: "Bac Pro Système Numérique",
+      edu4Desc: "ORT Daniel Mayer - Mention Bien",
+      experiencesTitle: "EXPÉRIENCES PROFESSIONNELLES",
+      exp1Title: "Développeur LLM",
+      exp1Company: "Mon Ami Poto - Alternance",
+      exp1Task1: "Développement d'applications IA en Python",
+      exp1Task2: "Conception et développement d'agents intelligents et assistants virtuels",
+      exp1Task3: "Intégration d'APIs IA et automatisation de workflows conversationnels",
+      exp2Title: "Développeur Web",
+      exp2Task1: "Maintenance et développement de sites WordPress",
+      exp2Task2: "Analyse des performances avec Google Analytics",
+      exp3Title: "Assistant Administrateur Systèmes",
+      exp3Task1: "Gestion du serveur PowerEdge R620",
+      exp3Task2: "Déploiement et gestion de machines virtuelles",
+      exp3Task3: "Réinitialisation d'ordinateurs et installation de Windows",
+      competencesTitle: "COMPÉTENCES",
+      skillLanguages: "Langages",
+      skillFrameworks: "Frameworks & Libraries",
+      skillAI: "IA & Data Science",
+      skillUIUX: "UI/UX & Styling",
+      skillDatabases: "Bases de données",
+      skillTools: "Outils & DevOps",
+      languesTitle: "LANGUES",
+      langFrench: "Français :",
+      langEnglish: "Anglais :",
+      langNative: " Natif",
+      printButton: "Imprimer / Télécharger PDF",
+      printInfo: 'Choisissez votre imprimante pour imprimer ou "Enregistrer en PDF" pour télécharger'
+    },
+    en: {
+      subtitle: "Engineering Student · AI Developer",
+      profileTitle: "PROFILE",
+      profileText: "Graduate with a BTS SIO SLAM and a Bachelor's degree in Computer Science, currently pursuing an engineering degree at ECE Paris. Passionate about artificial intelligence, language models, and developing innovative solutions. Currently in work-study program to develop my skills in AI, Big Data and software development.",
+      formationsTitle: "EDUCATION",
+      edu1Title: "Engineering Degree (Major DATA - AI)",
+      edu2Title: "Bachelor's Degree STS",
+      edu2Desc: "CNAM - Software Development, Artificial Intelligence and Big Data",
+      edu3Title: "BTS SIO SLAM",
+      edu3Desc: "Le Rebours - IT Services for Organizations",
+      edu4Title: "Professional Baccalaureate in Digital Systems",
+      edu4Desc: "ORT Daniel Mayer - With Honors",
+      experiencesTitle: "PROFESSIONAL EXPERIENCE",
+      exp1Title: "LLM Developer",
+      exp1Company: "Mon Ami Poto - Work-Study Program",
+      exp1Task1: "Development of AI applications in Python",
+      exp1Task2: "Design and development of intelligent agents and virtual assistants",
+      exp1Task3: "Integration of AI APIs and automation of conversational workflows",
+      exp2Title: "Web Developer",
+      exp2Task1: "Maintenance and development of WordPress websites",
+      exp2Task2: "Performance analysis with Google Analytics",
+      exp3Title: "Assistant Systems Administrator",
+      exp3Task1: "Management of PowerEdge R620 server",
+      exp3Task2: "Deployment and management of virtual machines",
+      exp3Task3: "Computer reset and Windows installation",
+      competencesTitle: "SKILLS",
+      skillLanguages: "Programming Languages",
+      skillFrameworks: "Frameworks & Libraries",
+      skillAI: "AI & Data Science",
+      skillUIUX: "UI/UX & Styling",
+      skillDatabases: "Databases",
+      skillTools: "Tools & DevOps",
+      languesTitle: "LANGUAGES",
+      langFrench: "French:",
+      langEnglish: "English:",
+      langNative: " Native",
+      printButton: "Print / Download PDF",
+      printInfo: 'Choose your printer to print or "Save as PDF" to download'
+    }
+  };
+
+  let currentLang = 'fr';
+
+  function switchLanguage(lang) {
+    currentLang = lang;
+
+    // Update all elements with data-i18n attribute
+    document.querySelectorAll('[data-i18n]').forEach(element => {
+      const key = element.getAttribute('data-i18n');
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
+
+    // Update button states
+    document.getElementById('btn-fr').classList.toggle('lang-btn-active', lang === 'fr');
+    document.getElementById('btn-en').classList.toggle('lang-btn-active', lang === 'en');
+  }
+
+  // Make function global
+  window.switchLanguage = switchLanguage;
+</script>
+
 <style>
-  /* Style du QR code avec dégradé gris comme "EMMANUEL ZERBIB" */
+  /* Style du QR code avec dégradé gris (même que gradient-text) */
   .qr-code-container {
     position: relative;
     display: inline-block;
-  }
-
-  .qr-code-container img {
-    display: block;
-    position: relative;
-  }
-
-  .qr-code-container::before {
-    content: '';
-    position: absolute;
-    inset: 0;
     background: linear-gradient(to right, #fafafa 0%, #a1a1aa 100%);
-    mask-image: var(--qr-mask);
-    -webkit-mask-image: var(--qr-mask);
-    mask-size: contain;
-    -webkit-mask-size: contain;
-    mask-repeat: no-repeat;
-    -webkit-mask-repeat: no-repeat;
-    pointer-events: none;
+    -webkit-mask: url('/qr-code.png') center/contain no-repeat;
+    mask: url('/qr-code.png') center/contain no-repeat;
   }
 
   .qr-code-container img {
     opacity: 0;
   }
 
-  /* Alternative avec opacity sur l'image originale et overlay gradient */
-  .qr-code-container {
-    background: linear-gradient(to right, #fafafa 0%, #a1a1aa 100%);
-    -webkit-mask-image: url('/qr-code.png');
-    mask-image: url('/qr-code.png');
-    -webkit-mask-size: contain;
-    mask-size: contain;
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    mask-position: center;
+  /* Style des boutons de langue */
+  .lang-btn {
+    background: transparent;
+    color: #a1a1aa;
+  }
+
+  .lang-btn-active {
+    background: linear-gradient(to right, #3b82f6 0%, #2563eb 100%);
+    border-color: #3b82f6 !important;
+    color: white;
+  }
+
+  .lang-btn:hover:not(.lang-btn-active) {
+    color: #e4e4e7;
   }
 
   @media print {
@@ -387,6 +496,8 @@ import Layout from '../layouts/Layout.astro';
       print-color-adjust: exact !important;
       -webkit-print-color-adjust: exact !important;
       color-adjust: exact !important;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     html, body {
@@ -396,6 +507,8 @@ import Layout from '../layouts/Layout.astro';
       padding: 0 !important;
       height: 297mm !important;
       overflow: hidden !important;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: crisp-edges;
     }
 
     .cv-container {
@@ -410,25 +523,25 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .max-w-\[210mm\] {
-      margin: 0 auto !important;
+      margin: 0 !important;
       box-shadow: none !important;
       width: 210mm !important;
       height: 297mm !important;
       max-height: 297mm !important;
       display: block !important;
       overflow: hidden !important;
-      transform: scale(0.98);
-      transform-origin: top center;
     }
 
     /* Compacter le header */
     header {
       padding: 0.7rem !important;
+      background: linear-gradient(to bottom right, #18181b, #27272a, #18181b) !important;
     }
 
     header h1 {
       font-size: 1.5rem !important;
       margin-bottom: 0.25rem !important;
+      letter-spacing: -0.02em !important;
     }
 
     header p {
@@ -472,6 +585,11 @@ import Layout from '../layouts/Layout.astro';
       padding-bottom: 0.15rem !important;
     }
 
+    /* Améliorer le rendu des bordures */
+    h2.border-b-2 {
+      border-bottom: 2px solid #3f3f46 !important;
+    }
+
     /* Section Profil */
     section:first-of-type p {
       font-size: 0.58rem !important;
@@ -484,7 +602,8 @@ import Layout from '../layouts/Layout.astro';
     }
 
     .glass {
-      background: rgba(39, 39, 42, 0.5) !important;
+      background: #27272a !important;
+      border: 1px solid #3f3f46 !important;
       backdrop-filter: none !important;
       padding: 0.35rem !important;
     }
@@ -530,6 +649,8 @@ import Layout from '../layouts/Layout.astro';
     .flex-wrap span {
       padding: 0.11rem 0.28rem !important;
       font-size: 0.52rem !important;
+      background: #27272a !important;
+      border: 1px solid #52525b !important;
     }
 
     /* Titres des compétences */
@@ -571,11 +692,23 @@ import Layout from '../layouts/Layout.astro';
       -webkit-print-color-adjust: exact !important;
     }
 
-    /* QR code en impression reste noir pour la lisibilité */
+    /* Gradient text en impression */
+    .gradient-text {
+      background: linear-gradient(to right, #fafafa 0%, #a1a1aa 100%) !important;
+      -webkit-background-clip: text !important;
+      background-clip: text !important;
+      -webkit-text-fill-color: transparent !important;
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
+    }
+
+    /* QR code en impression avec dégradé gris */
     .qr-code-container {
-      background: black !important;
-      -webkit-mask-image: url('/qr-code.png') !important;
-      mask-image: url('/qr-code.png') !important;
+      background: linear-gradient(to right, #fafafa 0%, #a1a1aa 100%) !important;
+      -webkit-mask: url('/qr-code.png') center/contain no-repeat !important;
+      mask: url('/qr-code.png') center/contain no-repeat !important;
+      print-color-adjust: exact !important;
+      -webkit-print-color-adjust: exact !important;
     }
 
     .qr-code-container img {

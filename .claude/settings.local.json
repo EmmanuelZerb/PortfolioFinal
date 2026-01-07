@@ -6,7 +6,13 @@
       "Bash(mkdir:*)",
       "Bash(ls:*)",
       "Bash(npm run dev:*)",
-      "Bash(start index.html)"
+      "Bash(start index.html)",
+      "Bash(mv:*)",
+      "Bash(dir:*)",
+      "Bash(move qr-code.png publicqr-code.png)",
+      "Bash(copy qr-code.png publicqr-code.png /Y)",
+      "Bash(cmd /c \"copy qr-code.png public\\\\qr-code.png\")",
+      "Bash(powershell:*)"
     ]
   }
 }
