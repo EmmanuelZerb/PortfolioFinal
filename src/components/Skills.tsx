@@ -3,23 +3,23 @@ import { motion } from 'framer-motion';
 const skills = [
   {
     category: 'Langages',
-    items: ['Python', 'JavaScript', 'Java', 'PHP', 'C++', 'SQL', 'HTML/CSS'],
+    items: ['Python', 'JavaScript ES6+', 'TypeScript', 'GDScript', 'C#', 'HTML5', 'CSS'],
   },
   {
-    category: 'Frameworks',
-    items: ['FastAPI', 'Flask', 'LangGraph', 'Symfony', 'SpringBoot', 'JavaFX', 'Bootstrap', 'Flutter'],
+    category: 'Frameworks & Libraries',
+    items: ['React 18', 'Next.js 14', 'LangGraph', 'TailwindCSS', 'Discord.py', 'PyQt5', 'Web Components'],
   },
   {
     category: 'IA & LLM',
-    items: ['OpenAI API', 'LangChain', 'Agents Intelligents', 'RAG', 'HuggingFace', 'Speech-to-Text'],
+    items: ['OpenAI GPT-4', 'Claude', 'Agents Intelligents', 'MediaPipe', 'OpenCV', 'Gladia API', 'Speech-to-Text'],
   },
   {
-    category: 'Bases de données',
-    items: ['MySQL', 'MariaDB', 'SQLite', 'PostgreSQL'],
+    category: 'Bases de données & Backend',
+    items: ['Supabase', 'IndexedDB', 'WebSocket', 'Service Workers'],
   },
   {
-    category: 'Outils & DevOps',
-    items: ['Git', 'Docker', 'Linux', 'WordPress', 'HubSpot', 'Google Analytics'],
+    category: 'Outils & Développement',
+    items: ['Git', 'Godot Engine 4.4', 'Monaco Editor', 'FMOD', 'Arduino', 'NumPy'],
   },
 ];
 
