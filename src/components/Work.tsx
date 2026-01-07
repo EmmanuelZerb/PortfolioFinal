@@ -96,11 +96,13 @@ export default function Work() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="group block glass p-8 rounded-2xl hover:bg-zinc-800/70 transition-all duration-300 cursor-pointer"
+              whileHover={{ backgroundColor: 'rgba(39, 39, 42, 0.7)' }}
+              className="group block bg-zinc-900/50 backdrop-blur-xl border border-zinc-800/50 p-8 rounded-2xl cursor-pointer"
+              style={{ willChange: 'opacity, transform' }}
             >
               <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6">
                 <div className="flex-1">
-                  <h3 className="text-2xl font-semibold mb-3 group-hover:gradient-text transition-all">
+                  <h3 className="text-2xl font-semibold mb-3 group-hover:gradient-text transition-colors duration-300">
                     {project.title}
                   </h3>
                   <p className="text-zinc-400 mb-4">{project.description}</p>
