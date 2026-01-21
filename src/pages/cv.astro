@@ -97,7 +97,7 @@ import CVDownload from '../components/CVDownload';
             <!-- QR Code Portfolio -->
             <div class="flex flex-col items-center justify-center gap-2 flex-shrink-0 md:w-auto w-full md:mt-0 mt-4">
               <a
-                href="https://ap3gr8.sio1-2lerebours.org/"
+                href="https://portfolioemmanuelzerbib.com/"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="group"
@@ -450,6 +450,44 @@ import CVDownload from '../components/CVDownload';
 
   // Make function global
   window.switchLanguage = switchLanguage;
+
+  // Auto-detect language based on IP geolocation
+  async function detectLanguageFromIP() {
+    try {
+      // Check if user has a saved language preference
+      const savedLang = localStorage.getItem('preferredLanguage');
+      if (savedLang) {
+        switchLanguage(savedLang);
+        return;
+      }
+
+      // Fetch country from IP
+      const response = await fetch('https://ipapi.co/json/');
+      const data = await response.json();
+
+      // French-speaking countries
+      const frenchCountries = ['FR', 'BE', 'CH', 'CA', 'LU', 'MC', 'SN', 'CI', 'ML', 'BF', 'NE', 'TG', 'BJ', 'GA', 'CG', 'CD', 'CM', 'MG', 'HT', 'MU', 'RE', 'GP', 'MQ', 'GF', 'NC', 'PF'];
+
+      const detectedLang = frenchCountries.includes(data.country_code) ? 'fr' : 'en';
+      switchLanguage(detectedLang);
+
+      // Save the detected language
+      localStorage.setItem('preferredLanguage', detectedLang);
+    } catch (error) {
+      // Default to French if detection fails
+      console.log('Could not detect location, defaulting to French');
+    }
+  }
+
+  // Save language preference when user manually switches
+  const originalSwitchLanguage = switchLanguage;
+  window.switchLanguage = function(lang) {
+    originalSwitchLanguage(lang);
+    localStorage.setItem('preferredLanguage', lang);
+  };
+
+  // Run detection on page load
+  detectLanguageFromIP();
 </script>
 
 <style>

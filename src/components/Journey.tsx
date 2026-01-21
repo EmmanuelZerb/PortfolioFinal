@@ -1,49 +1,52 @@
 import { motion } from 'framer-motion';
-
-const timeline = [
-  {
-    formation: {
-      year: '2025 - 2028',
-      title: 'Cycle Ingénieur (Majeure DATA - IA)',
-      organization: 'ECE Paris',
-      description: 'Formation d\'ingénieur spécialisée en Data Science et Intelligence Artificielle.',
-      highlight: true,
-    },
-    experience: {
-      year: '2024 - Présent',
-      title: 'Développeur LLM en Alternance',
-      organization: 'Mon Ami Poto',
-      description: 'Alternance débutée en Licence STS et poursuivie en école d\'ingénieur. Développement d\'agents intelligents, assistants virtuels et automatisation de workflows avec LangGraph, OpenAI et Claude.',
-      highlight: true,
-    },
-  },
-  {
-    formation: {
-      year: '2024 - 2025',
-      title: 'Licence STS',
-      organization: 'CNAM',
-      description: 'Développement informatique, Intelligence Artificielle et Big Data.',
-    },
-    experience: {
-      year: '2024 - Présent',
-      title: 'Développeur LLM en Alternance',
-      organization: 'Mon Ami Poto',
-      description: 'Début de l\'alternance : conception d\'applications IA en Python, intégration d\'APIs externes (HubSpot, Tracfin) et développement d\'agents conversationnels.',
-      highlight: true,
-    },
-  },
-  {
-    formation: {
-      year: '2022 - 2024',
-      title: 'BTS SIO SLAM',
-      organization: 'Le Rebours',
-      description: 'Brevet de Technicien Supérieur Service Informatique aux Organisations.',
-    },
-    experience: null,
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Journey() {
+  const { t, language } = useLanguage();
+
+  const timeline = [
+    {
+      formation: {
+        year: '2025 - 2028',
+        titleKey: 'journey.ece.title',
+        organization: 'ECE Paris',
+        descriptionKey: 'journey.ece.description',
+        highlight: true,
+      },
+      experience: {
+        year: language === 'fr' ? '2024 - Présent' : '2024 - Present',
+        titleKey: 'journey.poto1.title',
+        organization: 'Mon Ami Poto',
+        descriptionKey: 'journey.poto1.description',
+        highlight: true,
+      },
+    },
+    {
+      formation: {
+        year: '2024 - 2025',
+        titleKey: 'journey.licence.title',
+        organization: 'CNAM',
+        descriptionKey: 'journey.licence.description',
+      },
+      experience: {
+        year: language === 'fr' ? '2024 - Présent' : '2024 - Present',
+        titleKey: 'journey.poto1.title',
+        organization: 'Mon Ami Poto',
+        descriptionKey: 'journey.poto2.description',
+        highlight: true,
+      },
+    },
+    {
+      formation: {
+        year: '2022 - 2024',
+        titleKey: 'journey.bts.title',
+        organization: 'Le Rebours',
+        descriptionKey: 'journey.bts.description',
+      },
+      experience: null,
+    },
+  ];
+
   return (
     <section id="journey" className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
@@ -55,17 +58,17 @@ export default function Journey() {
           className="mb-16"
         >
           <span className="text-zinc-500 font-mono text-sm tracking-wider uppercase mb-4 block">
-            Mon Parcours
+            {t('journey.subtitle')}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold">
-            Formation & <span className="gradient-text">Expériences</span>
+            {t('journey.title')} <span className="gradient-text">{t('journey.titleHighlight')}</span>
           </h2>
         </motion.div>
 
         <div className="space-y-12 md:space-y-16">
           {timeline.map((item, index) => (
             <motion.div
-              key={`${item.formation.title}-${index}`}
+              key={`${item.formation.titleKey}-${index}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -101,23 +104,23 @@ export default function Journey() {
                 >
                   <div className="flex items-center gap-2 mb-3 flex-wrap">
                     <span className="text-zinc-400 font-mono text-xs uppercase tracking-wider">
-                      Formation
+                      {t('journey.formation')}
                     </span>
                     <span className="text-zinc-600 font-mono text-xs">
                       · {item.formation.year}
                     </span>
                     {item.formation.highlight && (
                       <span className="px-2 py-0.5 bg-zinc-800/70 border border-zinc-700/50 rounded text-zinc-400 font-mono text-xs">
-                        En cours
+                        {t('journey.current')}
                       </span>
                     )}
                   </div>
-                  <h3 className="text-lg md:text-xl font-semibold mb-2">{item.formation.title}</h3>
+                  <h3 className="text-lg md:text-xl font-semibold mb-2">{t(item.formation.titleKey)}</h3>
                   <p className="text-zinc-300 mb-2 font-medium">
                     {item.formation.organization}
                   </p>
                   <p className="text-zinc-500 text-sm leading-relaxed">
-                    {item.formation.description}
+                    {t(item.formation.descriptionKey)}
                   </p>
                 </motion.div>
 
@@ -136,25 +139,25 @@ export default function Journey() {
                   >
                     <div className="flex items-center gap-2 mb-3 flex-wrap">
                       <span className="text-zinc-400 font-mono text-xs uppercase tracking-wider">
-                        Expérience
+                        {t('journey.experience')}
                       </span>
                       <span className="text-zinc-600 font-mono text-xs">
                         · {item.experience.year}
                       </span>
                       {item.experience.highlight && (
                         <span className="px-2 py-0.5 bg-zinc-800/70 border border-zinc-700/50 rounded text-zinc-400 font-mono text-xs">
-                          En cours
+                          {t('journey.current')}
                         </span>
                       )}
                     </div>
                     <h3 className="text-lg md:text-xl font-semibold mb-2">
-                      {item.experience.title}
+                      {t(item.experience.titleKey)}
                     </h3>
                     <p className="text-zinc-300 mb-2 font-medium">
                       {item.experience.organization}
                     </p>
                     <p className="text-zinc-500 text-sm leading-relaxed">
-                      {item.experience.description}
+                      {t(item.experience.descriptionKey)}
                     </p>
                   </motion.div>
                 )}

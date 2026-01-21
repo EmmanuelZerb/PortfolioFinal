@@ -1,6 +1,9 @@
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <section id="contact" className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-4xl mx-auto">
@@ -12,13 +15,13 @@ export default function Contact() {
           className="text-center"
         >
           <span className="text-zinc-500 font-mono text-sm tracking-wider uppercase mb-4 block">
-            Restons en contact
+            {t('contact.subtitle')}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold mb-8">
-            Échangeons <span className="gradient-text">ensemble</span>
+            {t('contact.title')} <span className="gradient-text">{t('contact.titleHighlight')}</span>
           </h2>
           <p className="text-xl text-zinc-400 mb-12 max-w-2xl mx-auto text-balance">
-            N'hésitez pas à me contacter pour discuter de technologies, de projets ou d'opportunités professionnelles.
+            {t('contact.description')}
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -35,7 +38,7 @@ export default function Contact() {
 
           <div className="mt-16 pt-16 border-t border-zinc-800">
             <p className="text-zinc-600 text-sm">
-              © 2025 Emmanuel Zerbib · Développé avec Astro, React & Three.js
+              {t('contact.footer')}
             </p>
           </div>
         </motion.div>

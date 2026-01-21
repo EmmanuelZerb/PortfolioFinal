@@ -1,40 +1,41 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 
 const projects = [
   {
     title: 'The Last Strain',
-    description: 'Jeu d\'action/aventure 3D développé lors d\'un hackathon avec Godot Engine 4.4. Système de combat FPS, intégration audio FMOD pour une expérience sonore immersive, et support optionnel Arduino pour des contrôles physiques.',
+    descriptionKey: 'project.theLastStrain.description',
     tech: ['Godot Engine 4.4', 'GDScript', 'C#', 'FMOD', 'Arduino'],
     videoPath: '/videos/the-last-strain.mp4',
   },
   {
     title: 'MonAmiPoto - Assistant IA Personnel',
-    description: 'Application web moderne offrant une interface de chat intuitive pour interagir avec un assistant IA personnel. Support des thèmes clair/sombre, mode hors ligne avec synchronisation, et accessibilité complète.',
+    descriptionKey: 'project.monAmipoto.description',
     tech: ['JavaScript ES6+', 'Web Components', 'Service Workers', 'IndexedDB', 'WebSocket'],
     videoPath: '/videos/monamipoto.mp4',
   },
   {
     title: 'RealTime Code Converter',
-    description: 'Convertissez du code entre différents langages de programmation en temps réel avec l\'IA. Détection automatique du langage source, éditeur Monaco intégré et interface moderne avec animations fluides.',
+    descriptionKey: 'project.codeConverter.description',
     tech: ['Next.js 14', 'React 18', 'TailwindCSS', 'Monaco Editor', 'OpenAI GPT-4'],
     videoPath: '/videos/realtime-code-converter.mp4',
   },
   {
     title: 'Logbook',
-    description: 'Application web de transcription audio en temps réel avec authentification et stockage des enregistrements. Serveur WebSocket Python pour la capture audio et intégration avec l\'API Gladia pour la transcription.',
+    descriptionKey: 'project.logbook.description',
     tech: ['Python', 'WebSocket', 'Gladia API', 'Supabase', 'HTML5', 'JavaScript'],
     videoPath: '/videos/logbook.mp4',
   },
   {
     title: 'MemeMotion',
-    description: 'Application de reconnaissance d\'expressions faciales en temps réel qui compare vos expressions avec des memes iconiques. Détection faciale ultra-rapide avec MediaPipe et screenshots automatiques.',
+    descriptionKey: 'project.memeMotion.description',
     tech: ['Python', 'MediaPipe', 'OpenCV', 'PyQt5', 'NumPy'],
     videoPath: '/videos/mememotion.mp4',
   },
   {
     title: 'BlitzCrank GPT',
-    description: 'Bot Discord intelligent utilisant l\'API OpenAI pour fournir une assistance en temps réel aux joueurs de League of Legends. Intégration de GPT-4 pour des réponses contextuelles et pertinentes.',
+    descriptionKey: 'project.blitzCrank.description',
     tech: ['Python', 'OpenAI API', 'Discord.py', 'LLM'],
     videoPath: '/videos/blitzcrank-gpt.mp4',
   },
@@ -43,6 +44,7 @@ const projects = [
 export default function Work() {
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const isModalOpen = selectedVideo !== null;
+  const { t } = useLanguage();
 
   const openModal = (videoPath: string | undefined) => {
     if (videoPath) {
@@ -80,10 +82,10 @@ export default function Work() {
           className="mb-16"
         >
           <span className="text-zinc-500 font-mono text-sm tracking-wider uppercase mb-4 block">
-            Réalisations
+            {t('work.subtitle')}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold">
-            Projets <span className="gradient-text">sélectionnés</span>
+            {t('work.title')} <span className="gradient-text">{t('work.titleHighlight')}</span>
           </h2>
         </motion.div>
 
@@ -105,7 +107,7 @@ export default function Work() {
                   <h3 className="text-2xl font-semibold mb-3 group-hover:gradient-text transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-zinc-400 mb-4">{project.description}</p>
+                  <p className="text-zinc-400 mb-4">{t(project.descriptionKey)}</p>
                   <div className="flex flex-wrap gap-2">
                     {project.tech.map((tech) => (
                       <span

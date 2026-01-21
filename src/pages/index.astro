@@ -1,30 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SmoothScroll from '../components/SmoothScroll';
-import Hero from '../components/Hero';
-import Skills from '../components/Skills';
-import Work from '../components/Work';
-import Journey from '../components/Journey';
-import Contact from '../components/Contact';
-import Scene3D from '../components/Scene3D';
-import ScrollToTop from '../components/ScrollToTop';
-import Navigation from '../components/Navigation.tsx';
+import MainContent from '../components/MainContent';
 ---
 
 <Layout title="Emmanuel Zerbib | Étudiant Ingénieur · Développeur IA">
-  <SmoothScroll client:load>
-    <Scene3D client:load />
-
-    <Navigation client:load />
-
-    <main>
-      <Hero client:load />
-      <Work client:load />
-      <Journey client:load />
-      <Skills client:load />
-      <Contact client:load />
-    </main>
-
-    <ScrollToTop client:load />
-  </SmoothScroll>
+  <MainContent client:load />
 </Layout>

@@ -1,8 +1,11 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import LanguageSwitcher from './LanguageSwitcher';
 
 export default function Navigation() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { t } = useLanguage();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -63,16 +66,21 @@ export default function Navigation() {
   };
 
   const navItems = [
-    { href: '#work', label: 'Projets' },
-    { href: '#journey', label: 'Parcours' },
-    { href: '#skills', label: 'Compétences' },
-    { href: '#contact', label: 'Contact' },
+    { href: '#work', labelKey: 'nav.projects' },
+    { href: '#journey', labelKey: 'nav.journey' },
+    { href: '#skills', labelKey: 'nav.skills' },
+    { href: '#contact', labelKey: 'nav.contact' },
   ];
 
   return (
     <>
       <nav className="fixed top-0 left-0 right-0 z-50 px-6 md:px-12 py-6">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
+          {/* Language Switcher - Left side on desktop */}
+          <div className="hidden md:block">
+            <LanguageSwitcher />
+          </div>
+
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8 mx-auto">
             {navItems.map((item) => (
@@ -81,7 +89,7 @@ export default function Navigation() {
                 href={item.href}
                 className="text-sm text-zinc-500 hover:text-zinc-300 transition-colors"
               >
-                {item.label}
+                {t(item.labelKey)}
               </a>
             ))}
           </div>
@@ -139,11 +147,23 @@ export default function Navigation() {
             onClick={closeMenu}
           >
             <div className="flex flex-col items-center justify-center h-full gap-8">
+              {/* Language Switcher in Mobile Menu */}
+              <motion.div
+                custom={0}
+                variants={menuItemVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <LanguageSwitcher />
+              </motion.div>
+
               {navItems.map((item, i) => (
                 <motion.a
                   key={item.href}
                   href={item.href}
-                  custom={i}
+                  custom={i + 1}
                   variants={menuItemVariants}
                   initial="closed"
                   animate="open"
@@ -151,7 +171,7 @@ export default function Navigation() {
                   onClick={closeMenu}
                   className="text-3xl font-semibold text-zinc-300 hover:text-zinc-50 transition-colors"
                 >
-                  {item.label}
+                  {t(item.labelKey)}
                 </motion.a>
               ))}
 
@@ -160,7 +180,7 @@ export default function Navigation() {
                 href="https://github.com/EmmanuelZerb"
                 target="_blank"
                 rel="noopener noreferrer"
-                custom={navItems.length}
+                custom={navItems.length + 1}
                 variants={menuItemVariants}
                 initial="closed"
                 animate="open"

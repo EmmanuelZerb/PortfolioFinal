@@ -1,29 +1,32 @@
 import { motion } from 'framer-motion';
-
-const skills = [
-  {
-    category: 'Langages',
-    items: ['Python', 'JavaScript ES6+', 'TypeScript', 'GDScript', 'C#', 'HTML5', 'CSS'],
-  },
-  {
-    category: 'Frameworks & Libraries',
-    items: ['React 18', 'Next.js 14', 'LangGraph', 'TailwindCSS', 'Discord.py', 'PyQt5', 'Web Components'],
-  },
-  {
-    category: 'IA & LLM',
-    items: ['OpenAI GPT-4', 'Claude', 'Agents Intelligents', 'MediaPipe', 'OpenCV', 'Gladia API', 'Speech-to-Text'],
-  },
-  {
-    category: 'Bases de données & Backend',
-    items: ['Supabase', 'IndexedDB', 'WebSocket', 'Service Workers'],
-  },
-  {
-    category: 'Outils & Développement',
-    items: ['Git', 'Godot Engine 4.4', 'Monaco Editor', 'FMOD', 'Arduino', 'NumPy'],
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 export default function Skills() {
+  const { t } = useLanguage();
+
+  const skills = [
+    {
+      categoryKey: 'skills.languages',
+      items: ['Python', 'JavaScript ES6+', 'TypeScript', 'GDScript', 'C#', 'HTML5', 'CSS'],
+    },
+    {
+      categoryKey: 'skills.frameworks',
+      items: ['React 18', 'Next.js 14', 'LangGraph', 'TailwindCSS', 'Discord.py', 'PyQt5', 'Web Components'],
+    },
+    {
+      categoryKey: 'skills.ai',
+      items: ['OpenAI GPT-4', 'Claude', 'Agents Intelligents', 'MediaPipe', 'OpenCV', 'Gladia API', 'Speech-to-Text'],
+    },
+    {
+      categoryKey: 'skills.databases',
+      items: ['Supabase', 'IndexedDB', 'WebSocket', 'Service Workers'],
+    },
+    {
+      categoryKey: 'skills.tools',
+      items: ['Git', 'Godot Engine 4.4', 'Monaco Editor', 'FMOD', 'Arduino', 'NumPy'],
+    },
+  ];
+
   return (
     <section id="skills" className="py-32 px-6 md:px-12 lg:px-24">
       <div className="max-w-7xl mx-auto">
@@ -35,17 +38,17 @@ export default function Skills() {
           className="mb-16"
         >
           <span className="text-zinc-500 font-mono text-sm tracking-wider uppercase mb-4 block">
-            Stack Technique
+            {t('skills.subtitle')}
           </span>
           <h2 className="text-4xl md:text-6xl font-bold">
-            Technologies <span className="gradient-text">maîtrisées</span>
+            {t('skills.title')} <span className="gradient-text">{t('skills.titleHighlight')}</span>
           </h2>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {skills.map((skillGroup, index) => (
             <motion.div
-              key={skillGroup.category}
+              key={skillGroup.categoryKey}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -53,7 +56,7 @@ export default function Skills() {
               className="glass p-8 rounded-2xl"
             >
               <h3 className="text-xl font-semibold mb-6 text-zinc-300">
-                {skillGroup.category}
+                {t(skillGroup.categoryKey)}
               </h3>
               <ul className="space-y-3">
                 {skillGroup.items.map((skill) => (
